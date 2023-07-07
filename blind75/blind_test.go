@@ -194,3 +194,43 @@ func TestValidBST(t *testing.T) {
 	r := makeBST()
 	println(isValidBST(r))
 }
+
+func TestLengthOfLongestSubstring(t *testing.T) {
+	println(lengthOfLongestSubstring("abcab"))
+	println(lengthOfLongestSubstring("abcde"))
+	println(lengthOfLongestSubstring("bbbbbb"))
+	println(lengthOfLongestSubstring("pwwkew"))
+	println(lengthOfLongestSubstring("abcdeaf"))
+	println(lengthOfLongestSubstring("aabbb"))
+}
+
+// AABABAA
+func TestCharReplace(t *testing.T) {
+	println(characterReplacement("AABABAA", 1))
+	println(characterReplacement("AABABAA", 2))
+	println(characterReplacement("AABABAACCCCCC", 2))
+	println(characterReplacement("BAAAAAAAAAAB", 2))
+}
+
+func TestMinWindow(t *testing.T) {
+	println(minWindow("ADOBECODEBANC", "ABC"))
+	println(minWindow("A", "A"))
+	println(minWindow("A", "AA"))
+}
+
+func TestIsAnagram(t *testing.T) {
+	println(isAnagram("nihao", "haoni"))
+	println(isAnagram("nihao", "haowo"))
+}
+
+func TestIsValid(t *testing.T) {
+	println(isValid("(){}[]"))
+	println(isValid("({[]})"))
+	println(isValid("((){}[]"))
+}
+
+func TestGroupAnagram(t *testing.T) {
+	g := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+	fmt.Println(groupAnagram(g))
+	// 输出: [["bat"],["nat","tan"],["ate","eat","tea"]]
+}
