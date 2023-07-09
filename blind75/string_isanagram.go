@@ -27,7 +27,7 @@ func isAnagram(s string, t string) bool {
 // 输入: strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 // 输出: [["bat"],["nat","tan"],["ate","eat","tea"]]
 
-func groupAnagram(strs []string) [][]string {
+func groupAnagramA(strs []string) [][]string {
 	res := [][]string{}
 
 	for len(strs) > 0 {
@@ -40,6 +40,35 @@ func groupAnagram(strs []string) [][]string {
 		}
 
 		res = append(res, group)
+	}
+
+	return res
+}
+
+func groupAnagram(strs []string) [][]string {
+	strsM := make(map[string]bool)
+	res := [][]string{}
+
+	for _, v := range strs {
+		strsM[v] = false
+	}
+
+	for i := 0; i < len(strs); i++ {
+		if val, _ := strsM[strs[i]]; val {
+			continue
+		}
+		tmp := []string{}
+		for j := i; j < len(strs); j++ {
+			if val, _ := strsM[strs[j]]; val {
+				continue
+			}
+			if isAnagram(strs[i], strs[j]) {
+				strsM[strs[j]] = true
+				tmp = append(tmp, strs[j])
+			}
+		}
+
+		res = append(res, tmp)
 	}
 
 	return res

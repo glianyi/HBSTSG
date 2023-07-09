@@ -234,3 +234,52 @@ func TestGroupAnagram(t *testing.T) {
 	fmt.Println(groupAnagram(g))
 	// 输出: [["bat"],["nat","tan"],["ate","eat","tea"]]
 }
+
+//	     100(0)
+//	    /      \
+//	 40(1)     50(2)
+//	/  \      /      \
+//
+// 10(3) 15(4) 30(5) 40(6)
+func TestHeap(t *testing.T) {
+	h := heap{
+		list: []int{100, 400, 50, 10, 15, 30, 40, 600},
+	}
+	h.printHeap()
+	h.heapify()
+	h.printHeap()
+	println(h.pop())
+	h.printHeap()
+	println(h.peek())
+	h.printHeap()
+	h.push(1000)
+	h.printHeap()
+}
+
+func TestHeapSort(t *testing.T) {
+	heapSort([]int{8, 7, 4, 6, 2, 1, 5})
+}
+
+func TestIsPalindrome(t *testing.T) {
+	println(isPalindrome("nihaooahin"))
+	println(isPalindrome("nih,ao oahin"))
+	println(isPalindrome("nih,aoo ahin"))
+	println(isPalindrome("A man, a plan, a canal Panama"))
+}
+
+func TestLongestPalindrome(t *testing.T) {
+	println(longestPalindrome("sbacabc"))
+}
+
+func TestMap(t *testing.T) {
+	m := map[string]string{}
+	m["a"] = "a"
+
+	for k, v := range m {
+		println(k, v)
+	}
+}
+
+func TestCountSubstrings(t *testing.T) {
+	println(countSubstrings("sbacabc"))
+}
