@@ -15,3 +15,15 @@ func rob(nums []int) int {
 	fmt.Println(dp)
 	return dp[len(nums)]
 }
+
+func cycleRob(nums []int) int {
+	if len(nums) == 1 {
+		return nums[0]
+	}
+
+	if len(nums) == 2 {
+		return maxInt(nums[0], nums[1])
+	}
+
+	return maxInt(rob(nums[1:]), rob(nums[:len(nums)-1]))
+}

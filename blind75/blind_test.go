@@ -331,3 +331,61 @@ func TestCombinationSum4(t *testing.T) {
 func TestRob(t *testing.T) {
 	println(rob([]int{1, 2, 3, 1}))
 }
+
+func TestCycleRob(t *testing.T) {
+	println(cycleRob([]int{1, 2, 3, 1}))
+	println(cycleRob([]int{2, 3, 2}))
+	println(cycleRob([]int{1, 2, 3}))
+	println(cycleRob([]int{1}))
+	println(cycleRob([]int{1, 2}))
+}
+
+func TestUniquePaths(t *testing.T) {
+	println(uniquePaths(7, 3))
+	println(dp_uniquePath(7, 3))
+}
+
+func TestCanJump(t *testing.T) {
+	println(canJump([]int{2, 3, 1, 1, 4}))
+	println(canJump([]int{3, 2, 1, 0, 4}))
+}
+
+func TestTwoSum(t *testing.T) {
+	fmt.Println(twoSum([]int{2, 7, 11, 15}, 9))
+}
+
+func TestMaxProfit(t *testing.T) {
+	println(maxProfit([]int{7, 1, 5, 3, 6, 4}))
+	println(maxProfit([]int{7, 6, 4, 3, 1}))
+}
+
+func TestContainDup(t *testing.T) {
+	println(containsDuplicate([]int{1, 3, 4, 2, 5, 1}))
+}
+
+func TestProductExceptSelf(t *testing.T) {
+	fmt.Println(productExceptSelf([]int{1, 2, 3, 4}))
+}
+
+func TestMaxSubarray(t *testing.T) {
+	println(maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
+	println(maxSubArrayDp([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
+	println(maxSubArray([]int{1}))
+	println(maxSubArrayDp([]int{1}))
+	println(maxSubArray([]int{5, 4, -1, 7, 8}))
+	println(maxSubArrayDp([]int{5, 4, -1, 7, 8}))
+}
+
+// 输入: nums = [2,3,-2,4]
+func TestMaxProduct(t *testing.T) {
+	println(maxProduct([]int{2, 3, -2, 4}))
+}
+
+func TestFindmin(t *testing.T) {
+	println(findMin([]int{4, 5, 6, 1, 2, 3}))
+}
+
+func TestMaxArea(t *testing.T) {
+	println(maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
+	println(maxArea([]int{1, 1}))
+}
