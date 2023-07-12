@@ -283,3 +283,51 @@ func TestMap(t *testing.T) {
 func TestCountSubstrings(t *testing.T) {
 	println(countSubstrings("sbacabc"))
 }
+
+func TestClimbStairs(t *testing.T) {
+	println(climbStairs(1))
+	println(climbStairsIter(1))
+	println(climbStairsIter2(1))
+	println(climbStairs(2))
+	println(climbStairsIter(2))
+	println(climbStairsIter2(2))
+	println(climbStairs(3))
+	println(climbStairsIter(3))
+	println(climbStairsIter2(3))
+	println(climbStairs(4))
+	println(climbStairsIter(4))
+	println(climbStairsIter2(4))
+	println(climbStairs(5))
+	println(climbStairsIter(5))
+	println(climbStairsIter2(5))
+}
+
+func TestCoinchange(t *testing.T) {
+	println(coinChange([]int{1, 2, 5}, 11))
+	println(coinChange([]int{2}, 1))
+	println(coinChange([]int{2, 5, 7}, 8))
+	println(coinChange([]int{1}, 8))
+}
+
+// [10,9,2,5,3,7,101,18],4
+func TestLongestlis(t *testing.T) {
+	println(lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}))
+}
+
+func TestLongestCommonSubsequence(t *testing.T) {
+	println(longestCommonSubsequence("abcbdab", "bdcaba"))
+}
+
+func TestWordbreak(t *testing.T) {
+	println(wordBreak("catsandog", []string{"cats", "dog", "sand", "and", "cat"}))
+	println(wordBreak("catdog", []string{"cats", "dog", "sand", "and", "cat"}))
+}
+
+func TestCombinationSum4(t *testing.T) {
+	println(combinationSum4([]int{3}, 9))
+	println(combinationSum4([]int{1, 2, 3}, 4))
+}
+
+func TestRob(t *testing.T) {
+	println(rob([]int{1, 2, 3, 1}))
+}
