@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-21T05:08:42.361Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="L4InfLrE_1FFTHY8y_mF" version="21.2.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-07-21T06:24:27.967Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="3Inm_rygvQJDIzubHE6S" version="21.2.1" type="github" pages="2">
   <diagram name="app" id="EyFm5lxAwvmxg763W57W">
     <mxGraphModel dx="954" dy="506" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -11,13 +11,13 @@
           <mxGeometry x="25" y="380" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-3" value="redis" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="25" y="500" width="120" height="60" as="geometry" />
+          <mxGeometry x="340" y="510" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-8" value="mysql" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="179" y="380" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-9" value="nsq" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="320" y="440" width="120" height="60" as="geometry" />
+          <mxGeometry x="550" y="380" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="250" y="100" width="180" height="180" as="geometry" />
@@ -28,7 +28,7 @@
         <mxCell id="XEVvbfDF2cy4csj6pFrY-6" value="nginx(http,websocket)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="70" y="85" width="530" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XEVvbfDF2cy4csj6pFrY-7" value="php-fpm(php service)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-7" value="php-fpm(phalcon,workman,swoole)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="70" y="230" width="520" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.879;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.862;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="XEVvbfDF2cy4csj6pFrY-6" target="XEVvbfDF2cy4csj6pFrY-7">
@@ -56,7 +56,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-22" value="php service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="179" y="500" width="120" height="60" as="geometry" />
+          <mxGeometry x="340" y="380" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
