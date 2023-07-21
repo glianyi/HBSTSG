@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-21T03:59:59.967Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="gEhikfqqgrlO1NWGwPTV" version="21.2.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-07-21T04:01:12.248Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="rD0ffHtjFETE1pc0-GX3" version="21.2.1" type="github" pages="2">
   <diagram name="第 1 页" id="EyFm5lxAwvmxg763W57W">
     <mxGraphModel dx="1194" dy="449" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -159,7 +159,7 @@
             <mxPoint x="-340" y="8850" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="bw3BrM_osRqDrZLjfqQU-36" value="华为云&lt;br&gt;（云上栏山）" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#3399FF;" vertex="1" parent="1">
+        <mxCell id="bw3BrM_osRqDrZLjfqQU-36" value="华为云&lt;br&gt;（HCSO）" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#3399FF;" vertex="1" parent="1">
           <mxGeometry x="-324" y="9188" width="85" height="45.5" as="geometry" />
         </mxCell>
         <mxCell id="bw3BrM_osRqDrZLjfqQU-37" value="proxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
