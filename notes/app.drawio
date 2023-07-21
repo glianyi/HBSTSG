@@ -1,35 +1,62 @@
-<mxfile host="app.diagrams.net" modified="2023-07-21T05:02:18.139Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="4jcUApN3DwtP5PIz5P4F" version="21.2.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-07-21T05:08:25.822Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="jhnf21aBYsmBQXhoLPqH" version="21.2.1" type="github" pages="2">
   <diagram name="app" id="EyFm5lxAwvmxg763W57W">
     <mxGraphModel dx="954" dy="506" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="XEVvbfDF2cy4csj6pFrY-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-5" value="9000" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="100" width="180" height="180" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-2" value="redis" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="10" y="350" width="120" height="60" as="geometry" />
+          <mxGeometry x="25" y="380" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-3" value="redis" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="200" y="350" width="120" height="60" as="geometry" />
+          <mxGeometry x="25" y="500" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-8" value="mysql" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="480" width="120" height="60" as="geometry" />
+          <mxGeometry x="179" y="380" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-9" value="nsq" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="414" y="450" width="120" height="60" as="geometry" />
+          <mxGeometry x="320" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="250" y="100" width="180" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="XEVvbfDF2cy4csj6pFrY-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-13" value="8756" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="100" width="180" height="180" as="geometry" />
         </mxCell>
         <mxCell id="XEVvbfDF2cy4csj6pFrY-6" value="nginx(http,websocket)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="120" width="530" height="60" as="geometry" />
+          <mxGeometry x="70" y="85" width="530" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XEVvbfDF2cy4csj6pFrY-7" value="php-fpm(index.php,workman,swoole)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="200" width="520" height="60" as="geometry" />
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-7" value="php-fpm(php service)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="230" width="520" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.879;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.862;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="XEVvbfDF2cy4csj6pFrY-6" target="XEVvbfDF2cy4csj6pFrY-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="230" as="sourcePoint" />
+            <mxPoint x="540" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.121;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.123;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="XEVvbfDF2cy4csj6pFrY-6" target="XEVvbfDF2cy4csj6pFrY-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="230" as="sourcePoint" />
+            <mxPoint x="210" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="XEVvbfDF2cy4csj6pFrY-7" target="XEVvbfDF2cy4csj6pFrY-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="360" as="sourcePoint" />
+            <mxPoint x="150" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="XEVvbfDF2cy4csj6pFrY-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="290" as="sourcePoint" />
+            <mxPoint x="270" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XEVvbfDF2cy4csj6pFrY-22" value="php service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="179" y="500" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
