@@ -389,3 +389,14 @@ func TestMaxArea(t *testing.T) {
 	println(maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
 	println(maxArea([]int{1, 1}))
 }
+
+func TestThreeSum(t *testing.T) {
+	fmt.Println(threeSum([]int{1, -1, -1, -4, 0, 0, 2}))
+}
+
+func TestInsert(t *testing.T) {
+	// [[1,5],[6,9]]
+	fmt.Println(insert([][]int{{1, 3}, {6, 9}}, []int{2, 5}))
+	// 输出：[[1,2],[3,10],[12,16]]
+	fmt.Println(insert([][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}}, []int{4, 8}))
+}
