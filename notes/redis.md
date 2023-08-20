@@ -74,6 +74,17 @@ tasks.json
 }
 ```
 
+https://redis.io/docs/manual/patterns/distributed-locks/
+redis分布式锁问题:
+set key value nx px 1000
+需要设置过期时间,不设置过期时间会出现deadlock现象(在释放锁(del key)之前client挂掉了)
+需要设置unique value安全删除锁,clientA在运行过程中长时间block,锁的过期时间到了被redis回收,clientB获取到了锁,clientA会在不知情的情况下删除锁
+安全删除锁you两步(check value == ***;delete key)通过lua script完成
+如果单实例的redis挂了,锁将会丢失
+如果redis采用m-s的方式做redis的高可用,也无法保证锁的有效性(redis的replica是异步的,如果锁在创建之后在还未replica到slave之前,master down,slave prompt,此时slave并没有锁的key)
+
+阿里云的redis服务对于多key的cmd可能不太支持,需要阅读使用手册
+
 单实例redis支持的最大连接数 maxclient
 
 列表中的数据是否压缩
@@ -87,7 +98,7 @@ tasks.json
 异步消息队列(消除svc svc之间的长连接)
 获取固定窗口记录(限流 lpush ltrim维护一个窗口)
 
-hash应用(缓存用户原信息)
+hash应用(缓存用户原信息) hashmap
 hset id:user name mark age 10 gendar male
 
 set应用 intset  唯一性 无序性 (好友共同关注[交集] 推荐关注[补集])

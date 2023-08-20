@@ -56,9 +56,9 @@ questions:
 
 GMP:
 - thread与goroutine的绑定机制
--- 如果所有goroutine都绑定在一个thread上,其中一个goroutine阻塞导致了thread的阻塞,那该thread上的其他thread也都会阻塞,同时也无法利用多core的能力
+-- 如果所有goroutine都绑定在一个thread上,其中一个goroutine阻塞导致了thread的阻塞,那该thread上的其他goroutine也都会阻塞,同时也无法利用多core的能力
 -- 如果一个goroutine对应一个thread,可以利用上多核,gorputine的调度就退化成了thread的调度
--- goroutine的调度同thread的调度是由区别的,thread是os抢占式调度(cpu始终周期驱动),goroutine是runtime scheduler进行协作调度(一个goroutine 让渡出thread之后才能被下一个goroutine使用,go scheduler也会有抢占策略,一个goroutine最多占用CPU10ms,防止其他 goroutine 被饿死)
+-- goroutine的调度同thread的调度是有区别的,thread是os抢占式调度(cpu始终周期驱动),goroutine是runtime scheduler进行协作调度(一个goroutine 让渡出thread之后才能被下一个goroutine使用,go scheduler也会有抢占策略,一个goroutine最多占用CPU10ms,防止其他 goroutine 被饿死)
 
 
 goroutine:

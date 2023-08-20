@@ -45,3 +45,92 @@ $ kubectl 配置获取上下文
 
 ### authentication
 - oidc(https://www.youtube.com/watch?v=nPZ8QDZXtLI)
+
+#### k8s运行动力
+- 事件驱动,事件会堆积也会有优先级,不同的组件消费事件
+#### scheduler
+- watch pod crd(filter nodeName == "") schedule pod to node(更新pod cr的nodeName字段)
+- 公平调度(不同事件的资源过来了需要及时处理)
+- 资源高效利用(对node cpu memory资源的利用,cpu少了可能还能跑但是memory少了就不行了)
+- QoS
+- affinity
+- anti-affinity
+- data persistance(worker找数据)(马栏山:客户数据在哪个云上,就去哪个云上创建主机)
+- predict(过滤)(filter chain narrow down候选节点)
+-- hostport
+-- resource
+-- hostname
+-- matchNodeSelector
+-- affinity
+-- diskConflict
+-- tolerate taint
+- priority(打分排序)
+-- selectorSpreadPriority
+-- interPodAffinity(topology zone)
+-- leastRequestedPrior
+-- balancedResourceAllocation
+-- nodePreferAvoidPodsPrior
+- resource(cpu)
+-- limit:pod最多需要多少资源,调度器不考虑该值  1 -> 1000m 100m->0.1
+-- request:调度器参考值,pod至少需要多少资源才能run(开发人员确定)
+- resource(memory)
+-- limit
+-- request
+
+#### initContainer
+- 顺序执行,limit request取所有container中最大的那个就好了
+- initContainer资源不会释放(pod restart 需要重新initContainer)
+- 跟container不一样不是一个sum
+
+如果不设置limit request会有什么问题,LimitRange可以设置默认limit request
+#### request limit衍生的超卖
+- pod通过配置较小的request run起来,当同node的其他pod负载很低的时候,该pod的资源使用在不超过limit的情况下是可以提高性能的
+
+通过kubectl get node nodename 查看node status中的资源数量
+- allocatable(可以分配给pod的资源总量)
+- capbility
+docker inspect 查看容器cgroup(cgroupParent,去节点上找到这个value对应的目录查看cgroup的值)
+namespace做资源隔离,cgroup做资源限制
+
+一个cpu period 100000微妙
+创建的container的时候很耗资源(创建成功之后会降下来)
+cpu set(绑定node某个cpu core)
+
+#### controller-manager
+- controller与controller之间的区别:工作流程相同,关注的对象不同,worker的逻辑不同
+#### kubelet
+#### CRI
+#### CNI
+#### CSI
+
+#### list and watch(https://docs.bitnami.com/tutorials/a-deep-dive-into-kubernetes-controllers/)(https://github.com/kubernetes-sigs/controller-runtime/issues/521)
+informer/reflect
+shared informer(listwatch function/specific resource in specific namespace/eventhandler),listwatch里边有list watch函数,handler里边有add update delete函数,注意cache和workqueue的区别
+work queue
+case:
+kubectl get resouce from apiserver 如果所有的get都要到达apiserver并查询etcd 压力会很大 于是有了缓存
+缓存在哪里 如何让缓存跟etcd的数据保持一致
+
+
+```go
+lw := cache.NewListWatchFromClient(
+      client,
+      &v1.Pod{},
+      api.NamespaceAll,
+      fieldSelector)
+store, controller := cache.NewInformer {
+    &cache.ListWatch{},
+    &v1.Pod{},
+    resyncPeriod,
+    cache.ResourceEventHandlerFuncs{},
+
+```
+event handler:
+- AddFunc is called when a new resource is created.
+- UpdateFunc is called when an existing resource is modified. The oldObj is the last known state of the resource. UpdateFunc is also called when a re-synchronization happens, and it gets called even if nothing changes.
+- DeleteFunc is called when an existing resource is deleted. It gets the final state of the resource (if it is known). Otherwise, it gets an object of type DeletedFinalStateUnknown. This can happen if the watch is closed and misses the delete event and the controller doesn't notice the deletion until the subsequent re-list.
+
+ResyncPeriod
+ResyncPeriod defines how often the controller goes through all items remaining in the cache and fires the UpdateFunc again. This provides a kind of configuration to periodically verify the current state and make it like the desired state.
+
+It's extremely useful in the case where the controller may have missed updates or prior actions failed. However, if you build a custom controller, you must be careful with the CPU load if the period time is too short.

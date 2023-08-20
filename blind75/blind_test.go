@@ -5,12 +5,18 @@ import (
 	"testing"
 )
 
-func makeTree() *TreeNode {
-	// 	3
+func makeTree() *TreeNode { // -10 20 9 7 15
+	// 	-10
 	// 	/ \
 	// 9  20
 	// 	 /  \
 	// 	15   7
+
+	// 	  -10
+	// 	  / \
+	//   20  9
+	// 	/  \
+	// 7   15
 	l2l := TreeNode{
 		Left:  nil,
 		Right: nil,
@@ -188,6 +194,10 @@ func TestBuildTree(t *testing.T) {
 	// preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 	r := buildTree([]int{3, 9, 20, 15, 7}, []int{9, 3, 15, 20, 7})
 	printTree(r)
+	println()
+	rr := buildTreeView([]int{3, 9, 20, 15, 7}, []int{9, 3, 15, 20, 7})
+	printTree(rr)
+	println()
 }
 
 func TestValidBST(t *testing.T) {
@@ -312,10 +322,12 @@ func TestCoinchange(t *testing.T) {
 // [10,9,2,5,3,7,101,18],4
 func TestLongestlis(t *testing.T) {
 	println(lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}))
+	println(lengthOfLISView([]int{10, 9, 2, 5, 3, 7, 101, 18}))
 }
 
 func TestLongestCommonSubsequence(t *testing.T) {
 	println(longestCommonSubsequence("abcbdab", "bdcaba"))
+	println(longestCommonSubsequenceView("abcbdab", "bdcaba"))
 }
 
 func TestWordbreak(t *testing.T) {
@@ -387,7 +399,9 @@ func TestFindmin(t *testing.T) {
 
 func TestMaxArea(t *testing.T) {
 	println(maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
+	println(maxAreaView([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
 	println(maxArea([]int{1, 1}))
+	println(maxAreaView([]int{1, 1}))
 }
 
 func TestThreeSum(t *testing.T) {
@@ -399,4 +413,42 @@ func TestInsert(t *testing.T) {
 	fmt.Println(insert([][]int{{1, 3}, {6, 9}}, []int{2, 5}))
 	// 输出：[[1,2],[3,10],[12,16]]
 	fmt.Println(insert([][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}}, []int{4, 8}))
+}
+
+func TestMaxSum(t *testing.T) {
+	// nums = [-2,1,-3,4,-1,2,1,-5,4] 连续子数组 [4,-1,2,1] 的和最大为6
+	println(maxSum([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
+	println(maxSumDp([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
+}
+
+func TestMirrorTree(t *testing.T) {
+	r := makeTree()
+	printTree(r)
+	println()
+	i := invertTree(r)
+	printTree(mirrorTree(r))
+	println()
+	// i := invertTreeIter(r)
+	printTree(i)
+	println()
+
+	printTree(mirrorTreeIter(r))
+	println()
+
+	printTree(mirrorTreeL(r))
+	println()
+}
+
+func TestNumWays(t *testing.T) {
+	println(numWays(7))
+	println(numWaysIter(7))
+	println(numWaysIter(7))
+}
+
+func TestBubbleSort(t *testing.T) {
+	fmt.Println(bubbleSort([]int{2, 5, 3, 7, 5, 4}))
+	fmt.Println(getLeastNumbers([]int{2, 5, 3, 7, 4, 5}, 2))
+	fmt.Println(insertSort([]int{2, 5, 3, 7, 5, 4}))
+	fmt.Println(selectSort([]int{2, 5, 3, 7, 5, 4}))
+	fmt.Println(quickSort([]int{2, 5, 3, 7, 5, 4}, 0, 5))
 }
