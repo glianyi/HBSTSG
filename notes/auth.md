@@ -1,1 +1,0 @@
-### OAUTH2(https://www.youtube.com/watch?v=996OiexHze0&t=4s)(https://github.com/RichardKnop/go-oauth2-server)
